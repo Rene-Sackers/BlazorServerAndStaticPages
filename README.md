@@ -1,6 +1,9 @@
 # Blazor server side + static pages
 This repo demonstrates how you can make a blazor app that servers both static pages (without the Blazor framework .js loaded) and Blazor server side pages.
 
+![demo](readme/demo.gif)
+[Explanation](#user-content-demo)
+
 ## Why
 I wanted to make a Blazor server side app that also has a static landing page. Blazor (server side) isn't the most efficient thing ever built, and websocket connections come at a premium. This helps handle loads of traffic on a landing page/static pages and save on needlessly rendering static pages on the server.
 
@@ -53,5 +56,3 @@ All pages have a counter component on them. When you enter the site through the 
 As soon as the user hits `/app` or `/app/otherblazorpage`, again a full page load occurs, but this time using the `/Pages/Blazor/_Host.cshtml`, which causes the Blazor framework to load.
 
 From this point on, navigating on-page to any other page will happen using the websocket. Now, the counter on the "static" pages will work as well, because the user is now routing/browsing though the Blazor framework.
-
-![demo](readme/demo.gif)
